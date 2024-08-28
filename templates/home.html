@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Expense Tracker Demo</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+     <link href="https://cdn.jsdelivr.net/npm/vuetify@3.7.0/dist/vuetify.min.css" rel="stylesheet" >
+
+
+  </head>
+  <body>
+
+   <div id="app"></div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@3.7.0/dist/vuetify.min.js"></script>
+
+
+
+    <script type="text/x-template" id="app-template">
+
+        <v-parallax src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg">
+
+        <div class="d-flex flex-column fill-height justify-center align-center text-white">
+          <h1 class="text-h4 font-weight-thin mb-4">
+            Vuetify
+          </h1>
+          <h4 class="subheading">
+            Expense Tracker application with vuetifyjs !
+          </h4>
+        </div>
+      </v-parallax>
+
+
+      <v-parallax
+        height="300"
+        src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg"
+      ></v-parallax>
+
+
+
+  <v-card class="mx-auto" max-width="500">
+    <v-card-item class="bg-cyan-darken-1">
+      <v-card-title>
+        <span class="text-h5">Sarah Mcbeal</span>
+      </v-card-title>
+
+      <template v-slot:append>
+        <v-defaults-provider
+          :defaults="{
+            VBtn: {
+              variant: 'text',
+              density: 'comfortable',
+            }
+          }"
+        >
+          <v-btn icon="mdi-chevron-left"></v-btn>
+
+          <v-btn icon="mdi-pencil"></v-btn>
+
+          <v-btn icon="mdi-dots-vertical"></v-btn>
+        </v-defaults-provider>
+      </template>
+    </v-card-item>
+
+    <v-list>
+      <v-list-item
+        append-icon="mdi-message-text"
+        prepend-icon="mdi-phone"
+        title="(650) 555-1234"
+      ></v-list-item>
+
+      <v-divider inset></v-divider>
+
+      <v-list-item
+        append-icon="mdi-message-text"
+        prepend-icon="mdi-phone"
+        title="(323) 555-6789"
+      ></v-list-item>
+
+      <v-divider inset></v-divider>
+
+      <v-list-item
+        prepend-icon="mdi-email"
+        title="mcbeal@example.com"
+      ></v-list-item>
+
+      <v-divider inset></v-divider>
+
+      <v-list-item
+        prepend-icon="mdi-map-marker"
+        title="Orlando, FL 79938"
+      ></v-list-item>
+    </v-list>
+
+    <v-img
+      height="200"
+      src="https://picsum.photos/700?image=996"
+      cover
+    ></v-img>
+  </v-card>
+
+
+
+
+
+
+    </script>
+
+
+
+  <script>
+
+    const { createApp } = Vue
+    const { createVuetify } = Vuetify
+
+    const vuetify = createVuetify()
+
+    const app = createApp({
+        template: "#app-template",
+      })
+
+
+
+    app.use(vuetify).mount('#app');
+  </script>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+
+
+  </body>
+</html>

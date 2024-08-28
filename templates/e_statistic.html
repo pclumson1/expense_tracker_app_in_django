@@ -1,0 +1,94 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+{% block title %}Expense Statistic{% endblock title %}
+
+
+{%  block content %}
+
+
+<div class="container-fluid">
+
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+   Total Expense $:
+    <span class="badge bg-primary rounded-pill">{{data.sum}}</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+   Max Expense $:
+    <span class="badge bg-primary rounded-pill">{{data.max}} </span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Min Expense $:
+    <span class="badge bg-primary rounded-pill"> {{data.min}}</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Average Expense $:
+    <span class="badge bg-primary rounded-pill"> {{data.avg}}</span>
+  </li>
+</ul>
+
+
+
+
+
+
+</div>
+
+
+Total Expense $: {{data.sum}} <br>
+Max Expense $: {{data.max}} <br>
+Min Expense $: {{data.min}} <br>
+Average Expense $: {{data.avg}}
+
+
+
+
+
+
+
+{% for e in expenses %}
+        <div class="media border border-success p-2 border-opacity-25">
+          <div class="card-header bg-transparent  border-success">
+            <span class="text-muted">
+
+            </span>
+            <span class="font-weight-bold"> a new expense of : {{ e.name }}</span> &middot;
+        </div>
+
+        <div class="media-body">
+            <h5 class="mt-0">Modus Vivendi !!!</h5>
+            <a href="{% url 'expense_detail' prl.pk %}">
+              {% if prl.pic %}
+              <img src="{{ e.photo.url }}" class="img-fluid" alt="">
+              {% endif %}
+            </a>
+            <br><br>
+
+        </div>
+        <br>
+        <div class="card-footer text-muted ">
+          <span>
+
+             Posted : {{ e.date|timesince }} ago .||. Total Expense:{{data.sum}}
+            </span>
+
+        </div>
+        <br>
+        </div>
+        <br>
+
+ {% endfor %}
+
+
+
+
+
+
+
+
+{% endblock content %}
